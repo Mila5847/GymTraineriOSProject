@@ -14,6 +14,12 @@
 		B30260022AD4C4E200365A8D /* gymtraineriosprojectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260012AD4C4E200365A8D /* gymtraineriosprojectTests.swift */; };
 		B302600C2AD4C4E200365A8D /* gymtraineriosprojectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302600B2AD4C4E200365A8D /* gymtraineriosprojectUITests.swift */; };
 		B302600E2AD4C4E200365A8D /* gymtraineriosprojectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302600D2AD4C4E200365A8D /* gymtraineriosprojectUITestsLaunchTests.swift */; };
+		B302601D2AD4EB7600365A8D /* CurrentClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302601C2AD4EB7600365A8D /* CurrentClientsView.swift */; };
+		B302601F2AD4EBCA00365A8D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302601E2AD4EBCA00365A8D /* SettingsView.swift */; };
+		B30260212AD4F25700365A8D /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260202AD4F25700365A8D /* Client.swift */; };
+		B30260242AD51EB100365A8D /* CurrentClientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */; };
+		B30260262AD5223A00365A8D /* AddClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260252AD5223A00365A8D /* AddClientView.swift */; };
+		B302602A2AD522B000365A8D /* AddClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260292AD522B000365A8D /* AddClientViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		B30260072AD4C4E200365A8D /* gymtraineriosprojectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gymtraineriosprojectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B302600B2AD4C4E200365A8D /* gymtraineriosprojectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymtraineriosprojectUITests.swift; sourceTree = "<group>"; };
 		B302600D2AD4C4E200365A8D /* gymtraineriosprojectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymtraineriosprojectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B302601C2AD4EB7600365A8D /* CurrentClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentClientsView.swift; sourceTree = "<group>"; };
+		B302601E2AD4EBCA00365A8D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B30260202AD4F25700365A8D /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentClientsViewModel.swift; sourceTree = "<group>"; };
+		B30260252AD5223A00365A8D /* AddClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientView.swift; sourceTree = "<group>"; };
+		B30260292AD522B000365A8D /* AddClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +106,9 @@
 		B3025FEF2AD4C4E100365A8D /* gymtraineriosproject */ = {
 			isa = PBXGroup;
 			children = (
+				B30260282AD5226A00365A8D /* Views */,
+				B30260272AD5225E00365A8D /* Models */,
+				B30260222AD51E9800365A8D /* ViewModels */,
 				B3025FF02AD4C4E100365A8D /* gymtraineriosprojectApp.swift */,
 				B3025FF22AD4C4E100365A8D /* ContentView.swift */,
 				B3025FF42AD4C4E100365A8D /* Assets.xcassets */,
@@ -125,6 +140,33 @@
 				B302600D2AD4C4E200365A8D /* gymtraineriosprojectUITestsLaunchTests.swift */,
 			);
 			path = gymtraineriosprojectUITests;
+			sourceTree = "<group>";
+		};
+		B30260222AD51E9800365A8D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */,
+				B30260292AD522B000365A8D /* AddClientViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B30260272AD5225E00365A8D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B30260202AD4F25700365A8D /* Client.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B30260282AD5226A00365A8D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B30260252AD5223A00365A8D /* AddClientView.swift */,
+				B302601E2AD4EBCA00365A8D /* SettingsView.swift */,
+				B302601C2AD4EB7600365A8D /* CurrentClientsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30260262AD5223A00365A8D /* AddClientView.swift in Sources */,
 				B3025FF32AD4C4E100365A8D /* ContentView.swift in Sources */,
+				B302601F2AD4EBCA00365A8D /* SettingsView.swift in Sources */,
+				B302601D2AD4EB7600365A8D /* CurrentClientsView.swift in Sources */,
+				B30260242AD51EB100365A8D /* CurrentClientsViewModel.swift in Sources */,
+				B30260212AD4F25700365A8D /* Client.swift in Sources */,
 				B3025FF12AD4C4E100365A8D /* gymtraineriosprojectApp.swift in Sources */,
+				B302602A2AD522B000365A8D /* AddClientViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

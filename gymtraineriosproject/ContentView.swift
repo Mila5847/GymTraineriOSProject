@@ -1,21 +1,29 @@
-//
-//  ContentView.swift
-//  gymtraineriosproject
-//
-//  Created by user249179 on 10/9/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var currentClientsViewModel = CurrentClientsViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                Spacer()
+                Image("dumbell")
+                    .resizable()
+                    .scaledToFit()
+
+                NavigationLink(destination: CurrentClientsView(viewModel: currentClientsViewModel)) {
+                    Text("Current ")
+                        .font(.title)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                // Navigation link for settings
+                Spacer()
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
@@ -24,3 +32,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
