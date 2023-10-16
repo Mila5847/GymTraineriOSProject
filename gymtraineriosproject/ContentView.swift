@@ -5,24 +5,30 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
-                Image("dumbell")
+            ZStack {
+                Image("fitnessBackground")
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+               
 
-                NavigationLink(destination: CurrentClientsView(viewModel: currentClientsViewModel)) {
-                    Text("Current ")
-                        .font(.title)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                VStack {
+                    Spacer()
+                    Spacer()
+                    NavigationLink(destination: CurrentClientsView(viewModel: currentClientsViewModel)) {
+                        Text("Current Clients")
+                            .font(.title)
+                            .padding()
+                            .background(Color.cyan)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            
+                    }
+                    // Navigation link for settings
+                    Spacer()
                 }
-                // Navigation link for settings
-                Spacer()
+                .padding()
             }
-            .padding()
         }
     }
 }
@@ -32,4 +38,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 

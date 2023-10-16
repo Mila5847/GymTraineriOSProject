@@ -1,42 +1,42 @@
 import SwiftUI
+
 struct CurrentClientsView: View {
     @ObservedObject var viewModel: CurrentClientsViewModel
     @State private var isAddingClient = false
-
-    init(viewModel: CurrentClientsViewModel) {
-        self.viewModel = viewModel
-    }
-
+    
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
-
-                // Existing Client List
+                
                 ScrollView {
                     LazyVStack(alignment: .leading) {
-                        ForEach(viewModel.clients) { client in
-                            HStack {
-                                Text(client.name)
-                                    .font(.system(size: 20, weight: .regular))
-                                    .padding()
-
-                                Spacer()
-
-                                Button(action: {
-                                    // Remove the client from the view model
-                                    viewModel.removeClient(client)
-                                }) {
-                                    Image(systemName: "xmark.circle.fill")
-                                        .foregroundColor(.red)
+                        ForEach(viewModel.clients, id: \.id) { client in
+                            NavigationLink(destination: ClientProgressView(client: client)) {
+                                HStack {
+                                    Text(client.name)
+                                        .font(.system(size: 20, weight: .regular))
+                                        .padding()
+                                    
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        // Remove the client from the view model
+                                        viewModel.removeClient(client)
+                                    }) {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .foregroundColor(.red)
+                                    }
+                                    .padding(.trailing, 20)
+                                    .font(.system(size: 20))
                                 }
-                                .padding(.trailing, 20)
-                                .font(.system(size: 20))
                             }
                         }
+
                     }
                 }
             }
+            .background(Color(red: 251 / 255.0, green: 203 / 255.0, blue: 124 / 255.0, opacity: 0.3))
             .navigationBarTitle("Current Clients")
             .onAppear {
                 // Reset the flag when the view appears to enable navigation
@@ -50,11 +50,13 @@ struct CurrentClientsView: View {
                     }) {
                         Image(systemName: "plus")
                     }
+                    .sheet(isPresented: $isAddingClient) {
+                        // Present the AddClientView when isAddingClient is true
+                        AddClientView(viewModelAddClient: viewModel.addClientViewModel, viewModelCurrentClient: viewModel)
+                    }
                 }
             }
+            
         }
     }
 }
-
-
-

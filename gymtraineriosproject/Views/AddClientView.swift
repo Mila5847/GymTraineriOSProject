@@ -1,4 +1,5 @@
 import SwiftUI
+
 struct AddClientView: View {
     @ObservedObject var viewModelAddClient: AddClientViewModel
     @ObservedObject var viewModelCurrentClient: CurrentClientsViewModel
@@ -11,11 +12,11 @@ struct AddClientView: View {
                     Text("Male").tag("Male")
                     Text("Female").tag("Female")
                 }
-                Stepper("Age: \(viewModelAddClient.age)", value: $viewModelAddClient.age, in: 0...150)
-                Slider(value: $viewModelAddClient.weight, in: 0...300, step: 0.1) {
-                    Text("Weight: \(viewModelAddClient.weight, specifier: "%.1f") kg")
-                }
-            }
+                TextField("Age", text: $viewModelAddClient.age)
+                Slider(value: $viewModelAddClient.weight, in: 0...300, step: 1)
+                Text("Weight: \(Double(viewModelAddClient.weight), specifier: "%.1f") kg")
+                Slider(value: $viewModelAddClient.weightGoal, in: 0...300, step: 1)
+                Text("Weight Goal: \(Double(viewModelAddClient.weightGoal), specifier: "%.1f") kg")            }
 
             Section {
                 Button("Add Client") {
@@ -25,6 +26,7 @@ struct AddClientView: View {
         }
         .navigationTitle("Add Client")
     }
-}
+} 
+
 
 

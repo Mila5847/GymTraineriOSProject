@@ -20,6 +20,8 @@
 		B30260242AD51EB100365A8D /* CurrentClientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */; };
 		B30260262AD5223A00365A8D /* AddClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260252AD5223A00365A8D /* AddClientView.swift */; };
 		B302602A2AD522B000365A8D /* AddClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260292AD522B000365A8D /* AddClientViewModel.swift */; };
+		B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */; };
+		B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentClientsViewModel.swift; sourceTree = "<group>"; };
 		B30260252AD5223A00365A8D /* AddClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientView.swift; sourceTree = "<group>"; };
 		B30260292AD522B000365A8D /* AddClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewModel.swift; sourceTree = "<group>"; };
+		B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProgressViewModel.swift; sourceTree = "<group>"; };
+		B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 			children = (
 				B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */,
 				B30260292AD522B000365A8D /* AddClientViewModel.swift */,
+				B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				B30260252AD5223A00365A8D /* AddClientView.swift */,
 				B302601E2AD4EBCA00365A8D /* SettingsView.swift */,
 				B302601C2AD4EB7600365A8D /* CurrentClientsView.swift */,
+				B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,7 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */,
 				B30260262AD5223A00365A8D /* AddClientView.swift in Sources */,
+				B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */,
 				B3025FF32AD4C4E100365A8D /* ContentView.swift in Sources */,
 				B302601F2AD4EBCA00365A8D /* SettingsView.swift in Sources */,
 				B302601D2AD4EB7600365A8D /* CurrentClientsView.swift in Sources */,
