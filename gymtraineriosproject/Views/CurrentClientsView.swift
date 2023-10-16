@@ -3,7 +3,7 @@ import SwiftUI
 struct CurrentClientsView: View {
     @ObservedObject var viewModel: CurrentClientsViewModel
     @State private var isAddingClient = false
-    
+
     var body: some View {
         NavigationView {
             VStack {

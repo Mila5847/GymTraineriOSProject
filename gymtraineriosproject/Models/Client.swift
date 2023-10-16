@@ -15,6 +15,11 @@ class Client: ObservableObject, Identifiable{
         self.gender = gender
         self.weightGoal = weightGoal
     }
+    
+    func addProgressEntry(_ entry: ProgressEntry) {
+            
+    }
+    
 }
 
 
