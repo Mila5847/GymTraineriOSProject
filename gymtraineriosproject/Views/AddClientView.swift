@@ -24,7 +24,7 @@ struct AddClientView: View {
                 }
             }
         }
-        .navigationTitle("Add Client")
+        .navigationTitle("Client")
     }
 } 
 

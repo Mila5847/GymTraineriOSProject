@@ -1,15 +1,17 @@
 import SwiftUI
+
+import SwiftUI
+
 struct AddProgressEntryView: View {
-    @StateObject var progressViewModel = ProgressEntryViewModel()
-    @Binding var client: Client
-    @Binding var isAddingProgress: Bool
+    @Binding var isPresented: Bool
+    @ObservedObject var viewModel: ProgressEntryViewModel
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Add Progress Entry")) {
-                    DatePicker("Date", selection: $progressViewModel.date, displayedComponents: .date)
-                    TextField("Weight", text: $progressViewModel.weight)
+                    DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
+                    TextField("Weight", text: $viewModel.weight)
                         .keyboardType(.decimalPad)
                 }
             }
@@ -17,19 +19,46 @@ struct AddProgressEntryView: View {
             .navigationBarItems(
                 leading:
                     Button("Cancel") {
-                        isAddingProgress = false
+                        isPresented = false
                     },
                 trailing:
                     Button("Save") {
-                        if let weight = Double(progressViewModel.weight) {
-                            let progressEntry = ProgressEntry(date: progressViewModel.date, weight: weight)
-                            client.addProgressEntry(progressEntry)
-                            isAddingProgress = false
-                        }
+                        viewModel.saveProgressEntry()
+                        isPresented = false
                     }
-
             )
         }
     }
 }
+
+
+/*struct AddProgressEntryView: View {
+    @Binding var isPresented: Bool
+        @ObservedObject var viewModel: ProgressEntryViewModel
+
+    var body: some View {
+        NavigationView {
+            Form {
+                Section(header: Text("Add Progress Entry")) {
+                    DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
+                    TextField("Weight", text: $viewModel.weight)
+                        .keyboardType(.decimalPad)
+                }
+            }
+            .navigationBarTitle("Add Progress Entry")
+            .navigationBarItems(
+                leading:
+                    Button("Cancel") {
+                        isPresented = false
+                    },
+                trailing:
+                    Button("Save") {
+                        viewModel.saveProgressEntry()
+                        isPresented = false
+                    }
+            )
+        }
+    }
+}*/
+
 

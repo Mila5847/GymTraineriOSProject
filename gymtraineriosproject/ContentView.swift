@@ -10,7 +10,6 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-               
 
                 VStack {
                     Spacer()
@@ -22,7 +21,6 @@ struct ContentView: View {
                             .background(Color.cyan)
                             .foregroundColor(.white)
                             .cornerRadius(10)
-                            
                     }
                     // Navigation link for settings
                     Spacer()
@@ -35,8 +33,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView() // Pass an instance of Client here
     }
 }
+
 
 

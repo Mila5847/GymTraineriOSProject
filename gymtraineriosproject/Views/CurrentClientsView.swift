@@ -8,18 +8,18 @@ struct CurrentClientsView: View {
         NavigationView {
             VStack {
                 Spacer()
-                
+
                 ScrollView {
                     LazyVStack(alignment: .leading) {
                         ForEach(viewModel.clients, id: \.id) { client in
-                            NavigationLink(destination: ClientProgressView(client: client)) {
+                            NavigationLink(destination: ClientProgressView(viewModel: ClientProgressViewModel(client: client), client: client)) {
                                 HStack {
                                     Text(client.name)
                                         .font(.system(size: 20, weight: .regular))
                                         .padding()
-                                    
+
                                     Spacer()
-                                    
+
                                     Button(action: {
                                         // Remove the client from the view model
                                         viewModel.removeClient(client)
@@ -32,7 +32,6 @@ struct CurrentClientsView: View {
                                 }
                             }
                         }
-
                     }
                 }
             }
@@ -56,7 +55,6 @@ struct CurrentClientsView: View {
                     }
                 }
             }
-            
         }
     }
 }
