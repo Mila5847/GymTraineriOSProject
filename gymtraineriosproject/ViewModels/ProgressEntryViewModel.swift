@@ -21,11 +21,11 @@ class ProgressEntryViewModel: ObservableObject {
         self.client = client
     }
 
-    func addProgressEntry(date: Date, weight: Double) {
+    /*func addProgressEntry(date: Date, weight: Double) {
         // Create a new progress entry and add it to the progressEntries array
         let newEntry = ProgressEntry(date: date, weight: weight)
         progressEntries.append(newEntry)
-    }
+    }*/
 
     func saveProgressEntry() {
         if let weight = Double(weight) {

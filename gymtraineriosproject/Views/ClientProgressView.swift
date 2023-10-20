@@ -26,7 +26,7 @@ struct ClientProgressView: View {
                 }
                 
                 List {
-                    ForEach(viewModel.progressEntries, id: \.date) { entry in
+                    ForEach(viewModel.client.progressEntries, id: \.date) { entry in
                         Text("Date: \(entry.date, style: .date), Weight: \(entry.weight)")
                     }
                 }
