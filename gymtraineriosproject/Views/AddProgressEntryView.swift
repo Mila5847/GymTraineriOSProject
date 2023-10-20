@@ -1,10 +1,10 @@
 import SwiftUI
 
-import SwiftUI
-
 struct AddProgressEntryView: View {
     @Binding var isPresented: Bool
     @ObservedObject var viewModel: ProgressEntryViewModel
+    
+    @State private var isNavigatingToClientProgress = false
 
     var body: some View {
         NavigationView {
@@ -25,12 +25,19 @@ struct AddProgressEntryView: View {
                     Button("Save") {
                         viewModel.saveProgressEntry()
                         isPresented = false
+                        isNavigatingToClientProgress = true
                     }
+            )
+            .background(
+                NavigationLink(
+                    "", // Empty label, won't be visible
+                    destination: ClientProgressView(viewModel: ClientProgressViewModel(client: viewModel.client), client: viewModel.client),
+                    isActive: $isNavigatingToClientProgress
+                )
             )
         }
     }
 }
-
 
 /*struct AddProgressEntryView: View {
     @Binding var isPresented: Bool
@@ -57,7 +64,6 @@ struct AddProgressEntryView: View {
                         isPresented = false
                     }
             )
-        }
     }
 }*/
 

@@ -1,13 +1,12 @@
 import SwiftUI
 
-
 struct ClientProgressView: View {
     @ObservedObject var viewModel: ClientProgressViewModel
     var client: Client
     @State private var newDate = Date()
     @State private var newWeight = 0.0
     @State private var isPresentingAddProgressEntryScreen = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -15,26 +14,29 @@ struct ClientProgressView: View {
                     .font(.title)
                     .padding()
                 
-                if client.weightGoal >= client.weight {
+                if viewModel.client.weightGoal >= viewModel.client.weight {
                     Text("Goal: Lose \(String(format: "%.2f", client.weightGoal - client.weight)) kilograms")
                         .font(.headline)
                         .padding()
                 } else {
-                    Text("Goal: Gain \(String(format: "%.2f", client.weight - client.weightGoal)) kilograms")
+                    Text("Goal: Gain \(String(format: "%.2f", viewModel.client.weight - viewModel.client.weightGoal)) kilograms")
                         .font(.headline)
                         .padding()
                 }
                 
-                List {
-                    ForEach(viewModel.client.progressEntries, id: \.date) { entry in
-                        Text("Date: \(entry.date, style: .date), Weight: \(entry.weight)")
-                    }
+                if (!isPresentingAddProgressEntryScreen){
+                    List {
+                                        ForEach(viewModel.getProgressEntries(), id: \.date) { entry in
+                                            Text("Date: \(entry.date, style: .date), Weight: \(entry.weight)")
+                                        }
+                                    }
                 }
+                
                 
                 NavigationLink(destination: AddProgressEntryView(isPresented: $isPresentingAddProgressEntryScreen, viewModel: ProgressEntryViewModel(client: client))) {
                     Text("Add Progress Entry")
-                }
-                .navigationBarTitle("Progress")
+                }.navigationBarTitle("Progress")
+                
             }
         }
     }
