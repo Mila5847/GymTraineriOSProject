@@ -5,9 +5,9 @@ struct AddProgressEntryView: View {
     @ObservedObject var viewModel: ProgressEntryViewModel
     
     @State private var isNavigatingToClientProgress = false
-
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Add Progress Entry")) {
                     DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
@@ -29,14 +29,11 @@ struct AddProgressEntryView: View {
                     }
             )
             .background(
-                NavigationLink(
-                    "", // Empty label, won't be visible
-                    destination: ClientProgressView(viewModel: ClientProgressViewModel(client: viewModel.client), client: viewModel.client),
-                    isActive: $isNavigatingToClientProgress
-                )
+                NavigationLink("", destination: ClientProgressView(viewModel: ClientProgressViewModel(client: viewModel.client), client: viewModel.client), isActive: $isNavigatingToClientProgress)
             )
         }
     }
+
 }
 
 /*struct AddProgressEntryView: View {

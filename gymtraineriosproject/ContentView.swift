@@ -4,7 +4,7 @@ struct ContentView: View {
     @StateObject var currentClientsViewModel = CurrentClientsViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Image("fitnessBackground")
                     .resizable()

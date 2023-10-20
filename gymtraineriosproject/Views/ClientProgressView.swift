@@ -8,7 +8,7 @@ struct ClientProgressView: View {
     @State private var isPresentingAddProgressEntryScreen = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("Client: \(client.name)")
                     .font(.title)
