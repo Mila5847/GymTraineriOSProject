@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var currentClientsViewModel = CurrentClientsViewModel()
+    @ObservedObject var currentClientsViewModel = CurrentClientsViewModel()
 
     var body: some View {
         NavigationStack {
@@ -29,8 +29,6 @@ struct ContentView: View {
             }
         }
     }
-    
-    
     
 }
 

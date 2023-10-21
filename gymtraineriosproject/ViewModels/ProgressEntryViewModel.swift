@@ -1,9 +1,14 @@
 import Foundation
 import SwiftUI
 
-struct ProgressEntry {
+struct ProgressEntry{
     var date: Date
-    var weight: Double
+    var weight: Double?
+    
+    init(date: Date, weight: Double) {
+        self.date = date
+        self.weight = weight
+    }
 }
 
 class ProgressEntryViewModel: ObservableObject {
@@ -11,7 +16,7 @@ class ProgressEntryViewModel: ObservableObject {
     @Published var isAddingProgress: Bool = false
 
     @Published var date = Date()
-    @Published var weight = ""
+    @Published var weight: Double = 0.0
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -19,14 +24,12 @@ class ProgressEntryViewModel: ObservableObject {
         self.client = client
     }
 
-    func saveProgressEntry() {
-        if let weight = Double(weight) {
+    func addProgressEntry(newEntry: ProgressEntry) {
         print("Progress entries before + \(client.progressEntries)")
-        let progressEntry = ProgressEntry(date: date, weight: weight)
-        client.addProgressEntry(progressEntry)
+        client.addProgressEntry(newEntry)
         print("Progress entries after + \(client.progressEntries)")
         isAddingProgress = false
-        }
+        
     }
 
 }

@@ -1,15 +1,16 @@
 import SwiftUI
 
-class Client: ObservableObject, Identifiable {
-    @Published var id = UUID()
-    @Published var name: String
-    @Published var age: String
-    @Published var weight: Double
-    @Published var gender: String
-    @Published var weightGoal: Double
-    @Published var progressEntries: [ProgressEntry] = []
+struct Client: Identifiable {
+    var id = UUID()
+    var name: String
+    var age: String
+    var weight: Double
+    var gender: String
+    var weightGoal: Double
+    var progressEntries: [ProgressEntry] = []
 
-    init(name: String, age: String, weight: Double, gender: String, weightGoal: Double, progressEntries: [ProgressEntry] = []) {
+    init(id:UUID = UUID(), name: String, age: String, weight: Double, gender: String, weightGoal: Double, progressEntries: [ProgressEntry] = []) {
+        self.id = id
         self.name = name
         self.age = age
         self.weight = weight
@@ -17,43 +18,15 @@ class Client: ObservableObject, Identifiable {
         self.weightGoal = weightGoal
         self.progressEntries = progressEntries
     }
-
-    func addProgressEntry(_ entry: ProgressEntry) {
+    
+    
+    mutating func addProgressEntry(_ entry: ProgressEntry) {
         progressEntries.append(entry)
     }
-
+    
     func getAllProgressEntries() -> [ProgressEntry] {
         return progressEntries
     }
 }
-
-/*class Client: ObservableObject, Identifiable{
-    @Published var id = UUID()
-    @Published var name: String
-    @Published var age: String
-    @Published var weight: Double
-    @Published var gender: String
-    @Published var weightGoal: Double
-    @Published var progressEntries: [ProgressEntry] = []
-    
-    init(name: String, age: String, weight: Double, gender: String, weightGoal: Double, progressEntries: [ProgressEntry] = []) {
-        self.name = name
-        self.age = age
-        self.weight = weight
-        self.gender = gender
-        self.weightGoal = weightGoal
-        self.progressEntries = progressEntries
-        
-    }
-    
-    func addProgressEntry(_ entry: ProgressEntry) {
-        progressEntries.append(entry)
-    }
-    
-    func getAllProgressEntires() -> [ProgressEntry] {
-        return progressEntries
-    }
-    
-}*/
 
 
