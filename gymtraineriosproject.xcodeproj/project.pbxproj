@@ -20,10 +20,10 @@
 		B30260242AD51EB100365A8D /* CurrentClientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */; };
 		B30260262AD5223A00365A8D /* AddClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260252AD5223A00365A8D /* AddClientView.swift */; };
 		B302602A2AD522B000365A8D /* AddClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260292AD522B000365A8D /* AddClientViewModel.swift */; };
+		B316F3342AE395D500FDB934 /* ProgressEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F3332AE395D500FDB934 /* ProgressEntry.swift */; };
 		B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */; };
 		B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */; };
 		B39A04F82ADCEDC900FE0704 /* AddProgressEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F72ADCEDC900FE0704 /* AddProgressEntryView.swift */; };
-		B39A04FA2ADCF68B00FE0704 /* ProgressEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F92ADCF68B00FE0704 /* ProgressEntryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +60,10 @@
 		B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentClientsViewModel.swift; sourceTree = "<group>"; };
 		B30260252AD5223A00365A8D /* AddClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientView.swift; sourceTree = "<group>"; };
 		B30260292AD522B000365A8D /* AddClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewModel.swift; sourceTree = "<group>"; };
+		B316F3332AE395D500FDB934 /* ProgressEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntry.swift; sourceTree = "<group>"; };
 		B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProgressViewModel.swift; sourceTree = "<group>"; };
 		B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProgressView.swift; sourceTree = "<group>"; };
 		B39A04F72ADCEDC900FE0704 /* AddProgressEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProgressEntryView.swift; sourceTree = "<group>"; };
-		B39A04F92ADCF68B00FE0704 /* ProgressEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,6 @@
 				B30260232AD51EB100365A8D /* CurrentClientsViewModel.swift */,
 				B30260292AD522B000365A8D /* AddClientViewModel.swift */,
 				B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */,
-				B39A04F92ADCF68B00FE0704 /* ProgressEntryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				B30260202AD4F25700365A8D /* Client.swift */,
+				B316F3332AE395D500FDB934 /* ProgressEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					B3025FEC2AD4C4E100365A8D = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -312,8 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */,
+				B316F3342AE395D500FDB934 /* ProgressEntry.swift in Sources */,
 				B30260262AD5223A00365A8D /* AddClientView.swift in Sources */,
-				B39A04FA2ADCF68B00FE0704 /* ProgressEntryViewModel.swift in Sources */,
 				B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */,
 				B3025FF32AD4C4E100365A8D /* ContentView.swift in Sources */,
 				B302601F2AD4EBCA00365A8D /* SettingsView.swift in Sources */,
@@ -395,6 +395,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -455,6 +456,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

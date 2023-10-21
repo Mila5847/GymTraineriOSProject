@@ -9,8 +9,11 @@ class ClientProgressViewModel: ObservableObject {
     
     func addProgressEntry(date: Date, weight: Double) {
         let newEntry = ProgressEntry(date: date, weight: weight)
+        print("NEW ENTRY \(newEntry)")
         client.addProgressEntry(newEntry)
     }
+    
+    
     
     func getProgressEntries() -> [ProgressEntry] {
         print("CLIENTS ON PROGRESS VIEW \(client.progressEntries)")
