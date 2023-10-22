@@ -12,7 +12,7 @@ struct CurrentClientsView: View {
                 ScrollView {
                     LazyVStack(alignment: .leading) {
                         ForEach(viewModel.clients, id: \.id) { client in
-                            NavigationLink(destination: ClientProgressView(viewModel: ClientProgressViewModel(client: client))) {
+                            NavigationLink(destination: ClientProgressView(viewModel: ClientProgressViewModel(client: client), viewModelCurrentClients: viewModel)) {
                                 HStack {
                                     Text(client.name)
                                         .font(.system(size: 20, weight: .regular))

@@ -3,6 +3,7 @@ import SwiftUI
 struct AddProgressEntryView: View {
     @Binding var isPresented: Bool
     @ObservedObject var viewModel: ClientProgressViewModel
+    @ObservedObject var viewModelCurrentclients: CurrentClientsViewModel
     @State private var newDate = Date()
     @State private var newWeightText = "0.0" // Represent newWeight as a String
     @Environment(\.presentationMode) var presentationMode
@@ -39,7 +40,7 @@ struct AddProgressEntryView: View {
                     presentationMode.wrappedValue.dismiss()
                 },
                 trailing: Button("Save") {
-                    viewModel.addProgressEntry(date: newDate, weight: newWeight)
+                    viewModel.addProgressEntryToClient(to:viewModelCurrentclients, date: newDate, weight: newWeight)
                     presentationMode.wrappedValue.dismiss()
                     isNavigatingToClientProgress = true
                 }

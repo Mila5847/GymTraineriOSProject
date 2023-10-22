@@ -30,4 +30,12 @@ class CurrentClientsViewModel: ObservableObject {
     func addClient(_ client: Client) {
         clients.append(client)
     }
+    
+    func addProgressEntryToClient(to client:Client, progressEntry: ProgressEntry) {
+        if let clientIndex = clients.firstIndex(where: { $0.id == client.id }) {
+            // Find the client in the array based on their id
+            clients[clientIndex].progressEntries.append(progressEntry)
+        }
+    }
+    
 }

@@ -7,13 +7,16 @@ class ClientProgressViewModel: ObservableObject {
         self.client = client
     }
     
-    func addProgressEntry(date: Date, weight: Double) {
+    /*func addProgressEntry(date: Date, weight: Double) {
         let newEntry = ProgressEntry(date: date, weight: weight)
         print("NEW ENTRY \(newEntry)")
         client.addProgressEntry(newEntry)
+    }*/
+    
+    func addProgressEntryToClient(to viewModel: CurrentClientsViewModel, date: Date, weight: Double) {
+        let newEntry = ProgressEntry(date: date, weight: weight)
+        viewModel.addProgressEntryToClient(to: client, progressEntry: newEntry)
     }
-    
-    
     
     func getProgressEntries() -> [ProgressEntry] {
         print("CLIENTS ON PROGRESS VIEW \(client.progressEntries)")
