@@ -6,24 +6,20 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Image("fitnessBackground")
+                Image("gymBackground")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
 
                 VStack {
-                    Spacer()
-                    Spacer()
                     NavigationLink(destination: CurrentClientsView(viewModel: currentClientsViewModel)) {
                         Text("Current Clients")
                             .font(.title)
                             .padding()
-                            .background(Color.cyan)
+                            .background(Color(#colorLiteral(red: 0.9254902005, green: 0.5725490451, blue: 0.3568627536, alpha: 1)))
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
-                    // Navigation link for settings
-                    Spacer()
                 }
                 .padding()
             }
