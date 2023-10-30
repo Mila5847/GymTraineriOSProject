@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63AFB0D02AEFE83D00B97C52 /* CompletedGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFB0CF2AEFE83D00B97C52 /* CompletedGoalView.swift */; };
 		B3025FF12AD4C4E100365A8D /* gymtraineriosprojectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3025FF02AD4C4E100365A8D /* gymtraineriosprojectApp.swift */; };
 		B3025FF32AD4C4E100365A8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3025FF22AD4C4E100365A8D /* ContentView.swift */; };
 		B3025FF52AD4C4E100365A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3025FF42AD4C4E100365A8D /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63AFB0CF2AEFE83D00B97C52 /* CompletedGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedGoalView.swift; sourceTree = "<group>"; };
 		B3025FED2AD4C4E100365A8D /* gymtraineriosproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gymtraineriosproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3025FF02AD4C4E100365A8D /* gymtraineriosprojectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymtraineriosprojectApp.swift; sourceTree = "<group>"; };
 		B3025FF22AD4C4E100365A8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				B302601C2AD4EB7600365A8D /* CurrentClientsView.swift */,
 				B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */,
 				B39A04F72ADCEDC900FE0704 /* AddProgressEntryView.swift */,
+				63AFB0CF2AEFE83D00B97C52 /* CompletedGoalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				B30260242AD51EB100365A8D /* CurrentClientsViewModel.swift in Sources */,
 				B30260212AD4F25700365A8D /* Client.swift in Sources */,
 				B3025FF12AD4C4E100365A8D /* gymtraineriosprojectApp.swift in Sources */,
+				63AFB0D02AEFE83D00B97C52 /* CompletedGoalView.swift in Sources */,
 				B39A04F82ADCEDC900FE0704 /* AddProgressEntryView.swift in Sources */,
 				B302602A2AD522B000365A8D /* AddClientViewModel.swift in Sources */,
 			);

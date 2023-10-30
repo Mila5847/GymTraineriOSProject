@@ -38,7 +38,7 @@ struct CurrentClientsView: View {
                     }
                 }
             }
-            .background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8))) // Set the background color here
+            .background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8)))
                        .navigationTitle("")
                        .onAppear {
                            // Reset the flag when the view appears to enable navigation

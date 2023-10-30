@@ -5,22 +5,15 @@ struct AddProgressEntryView: View {
     @ObservedObject var viewModel: ClientProgressViewModel
     @ObservedObject var viewModelCurrentclients: CurrentClientsViewModel
     @State private var newDate = Date()
-    @State private var newWeightText = "0.0" // Represent newWeight as a String
+    @State private var newWeightText = "" // Represent newWeight as a String
     @Environment(\.presentationMode) var presentationMode
     @State private var isNavigatingToClientProgress = false
     
     var newWeight: Double {
-        get {
-            // Convert the String to a Double
-            if let weight = Double(newWeightText) {
-                return weight
-            } else {
-                return 0.0
-            }
-        }
-        set {
-            // Convert the Double to a String
-            newWeightText = String(newValue)
+        if let weight = Double(newWeightText) {
+            return weight
+        } else {
+            return 0.0
         }
     }
 
@@ -40,7 +33,7 @@ struct AddProgressEntryView: View {
                     presentationMode.wrappedValue.dismiss()
                 },
                 trailing: Button("Save") {
-                    viewModel.addProgressEntryToClient(to:viewModelCurrentclients, date: newDate, weight: newWeight)
+                    viewModel.addProgressEntryToClient(to: viewModelCurrentclients, date: newDate, weight: newWeight)
                     presentationMode.wrappedValue.dismiss()
                     isNavigatingToClientProgress = true
                 }
@@ -48,4 +41,3 @@ struct AddProgressEntryView: View {
         }
     }
 }
-

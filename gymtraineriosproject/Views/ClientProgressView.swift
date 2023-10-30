@@ -1,5 +1,19 @@
 import SwiftUI
 
+struct DateWeightView: View {
+    let date: Date
+    let weight: Double
+    
+    var body: some View {
+        HStack {
+            Text("Date: \(date, style: .date)")
+            Spacer()
+            Text("Weight: \(String(format: "%.2f", weight)) kg")
+        }
+    }
+}
+
+
 struct ClientProgressView: View {
     @ObservedObject var viewModel: ClientProgressViewModel
     @ObservedObject var viewModelCurrentClients: CurrentClientsViewModel
@@ -25,18 +39,18 @@ struct ClientProgressView: View {
                 }
                 List {
                     ForEach(viewModel.getProgressEntries(), id: \.date) { entry in
-                        Text("Date: \(entry.date, style: .date), Weight: \(entry.weight ?? 0.0)")
+                        DateWeightView(date: entry.date, weight: entry.weight ?? 0.0)
                     }
-                }
+                }.listStyle(PlainListStyle()).background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8)))
+                .padding(.bottom, 10)
                 Button("Add Progress Entry") {
                     isShowingForm.toggle()
                 }
             }
             .navigationTitle("Client Progress")
-        }
-        
+        }.background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8)))
         .sheet(isPresented: $isShowingForm, content: {
             AddProgressEntryView(isPresented: $isShowingForm, viewModel: viewModel, viewModelCurrentclients: viewModelCurrentClients)
-        })
+        }).background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8)))
     }
 }
