@@ -41,16 +41,19 @@ struct ClientProgressView: View {
                     ForEach(viewModel.getProgressEntries(), id: \.date) { entry in
                         DateWeightView(date: entry.date, weight: entry.weight ?? 0.0)
                     }
-                }.listStyle(PlainListStyle()).background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8)))
+                }.listStyle(PlainListStyle()).background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.5)))
                 .padding(.bottom, 10)
-                Button("Add Progress Entry") {
-                    isShowingForm.toggle()
-                }
+                Button(action: {
+                                    isShowingForm.toggle()
+                                }) {
+                                    Text("Add Progress Entry")
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                }
             }
-            .navigationTitle("Client Progress")
-        }.background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8)))
+            .background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.5)))            .navigationTitle("Client Progress")
+        }
         .sheet(isPresented: $isShowingForm, content: {
             AddProgressEntryView(isPresented: $isShowingForm, viewModel: viewModel, viewModelCurrentclients: viewModelCurrentClients)
-        }).background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8)))
+        })
     }
 }

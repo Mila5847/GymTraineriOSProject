@@ -8,7 +8,7 @@ struct CurrentClientsView: View {
         NavigationStack {
             VStack {
                 Text("Current Clients")
-                            .font(.title)
+                    .font(.title)
                 Spacer()
                 
                 ScrollView {
@@ -38,26 +38,27 @@ struct CurrentClientsView: View {
                     }
                 }
             }
-            .background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.8)))
-                       .navigationTitle("")
-                       .onAppear {
-                           // Reset the flag when the view appears to enable navigation
-                           isAddingClient = false
-                       }
-                       .toolbar {
-                           ToolbarItem(placement: .navigationBarTrailing) {
-                               Button(action: {
-                                   // Set the flag to true to trigger the navigation
-                                   isAddingClient = true
-                               }) {
-                                   Image(systemName: "plus")
-                               }
-                               .sheet(isPresented: $isAddingClient) {
-                                   // Present the AddClientView when isAddingClient is true
-                                   AddClientView(viewModelAddClient: viewModel.addClientViewModel, viewModelCurrentClient: viewModel)
-                               }
-                           }
-                       }
-                   }
-               }
-           }
+            .background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.5)))
+            .navigationBarTitle("", displayMode: .inline)
+            .onAppear {
+                // Reset the flag when the view appears to enable navigation
+                isAddingClient = false
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        // Set the flag to true to trigger the navigation
+                        isAddingClient = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                    .sheet(isPresented: $isAddingClient) {
+                        // Present the AddClientView when isAddingClient is true
+                        AddClientView(viewModelAddClient: viewModel.addClientViewModel, viewModelCurrentClient: viewModel)
+                    }
+                }
+            }
+        }
+    }
+}
+
