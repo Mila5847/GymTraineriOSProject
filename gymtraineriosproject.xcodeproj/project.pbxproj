@@ -25,6 +25,8 @@
 		B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */; };
 		B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */; };
 		B39A04F82ADCEDC900FE0704 /* AddProgressEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F72ADCEDC900FE0704 /* AddProgressEntryView.swift */; };
+		B3FCBD442AF6C1B400CC480B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3FCBD422AF6C1B400CC480B /* Model.xcdatamodeld */; };
+		B3FCBD462AF6C2F100CC480B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCBD452AF6C2F100CC480B /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProgressViewModel.swift; sourceTree = "<group>"; };
 		B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProgressView.swift; sourceTree = "<group>"; };
 		B39A04F72ADCEDC900FE0704 /* AddProgressEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProgressEntryView.swift; sourceTree = "<group>"; };
+		B3FCBD432AF6C1B400CC480B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B3FCBD452AF6C2F100CC480B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 		B3025FE42AD4C4E100365A8D = {
 			isa = PBXGroup;
 			children = (
+				B3FCBD452AF6C2F100CC480B /* Persistence.swift */,
+				B3FCBD422AF6C1B400CC480B /* Model.xcdatamodeld */,
 				B3025FEF2AD4C4E100365A8D /* gymtraineriosproject */,
 				B30260002AD4C4E200365A8D /* gymtraineriosprojectTests */,
 				B302600A2AD4C4E200365A8D /* gymtraineriosprojectUITests */,
@@ -317,11 +323,13 @@
 				B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */,
 				B316F3342AE395D500FDB934 /* ProgressEntry.swift in Sources */,
 				B30260262AD5223A00365A8D /* AddClientView.swift in Sources */,
+				B3FCBD442AF6C1B400CC480B /* Model.xcdatamodeld in Sources */,
 				B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */,
 				B3025FF32AD4C4E100365A8D /* ContentView.swift in Sources */,
 				B302601F2AD4EBCA00365A8D /* SettingsView.swift in Sources */,
 				B302601D2AD4EB7600365A8D /* CurrentClientsView.swift in Sources */,
 				B30260242AD51EB100365A8D /* CurrentClientsViewModel.swift in Sources */,
+				B3FCBD462AF6C2F100CC480B /* Persistence.swift in Sources */,
 				B30260212AD4F25700365A8D /* Client.swift in Sources */,
 				B3025FF12AD4C4E100365A8D /* gymtraineriosprojectApp.swift in Sources */,
 				63AFB0D02AEFE83D00B97C52 /* CompletedGoalView.swift in Sources */,
@@ -653,6 +661,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B3FCBD422AF6C1B400CC480B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B3FCBD432AF6C1B400CC480B /* Model.xcdatamodel */,
+			);
+			currentVersion = B3FCBD432AF6C1B400CC480B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B3025FE52AD4C4E100365A8D /* Project object */;
 }
