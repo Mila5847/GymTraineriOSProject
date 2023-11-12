@@ -1,27 +1,16 @@
 import SwiftUI
 struct AddProgressEntryView: View {
     @Binding var isPresented: Bool
-    @ObservedObject var viewModel: ClientProgressViewModel
-    @ObservedObject var viewModelCurrentclients: CurrentClientsViewModel
-    @State private var newDate = Date()
-    @State private var newWeightText = ""
+    @ObservedObject var viewModelProgress: ClientProgressViewModel
     @Environment(\.presentationMode) var presentationMode
     @State private var isNavigatingToClientProgress = false
-    
-    var newWeight: Double {
-        if let weight = Double(newWeightText) {
-            return weight
-        } else {
-            return 0.0
-        }
-    }
 
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    DatePicker("Date", selection: $newDate, displayedComponents: .date)
-                    TextField("Current Weight", text: $newWeightText)
+                    DatePicker("Date", selection: $viewModelProgress.date, displayedComponents: .date)
+                    TextField("Current Weight", text: $viewModelProgress.weightString)
                         .keyboardType(.decimalPad)
                     
                 }.background(.white)
@@ -39,7 +28,7 @@ struct AddProgressEntryView: View {
                 .cornerRadius(10)
         }
             Button(action: {
-                               viewModel.addProgressEntryToClient(to: viewModelCurrentclients, date: newDate, weight: newWeight)
+                viewModelProgress.addProgressEntry()
                                presentationMode.wrappedValue.dismiss()
                                isNavigatingToClientProgress = true
                            }) {

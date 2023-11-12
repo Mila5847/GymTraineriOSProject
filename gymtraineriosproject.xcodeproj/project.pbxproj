@@ -22,11 +22,13 @@
 		B30260262AD5223A00365A8D /* AddClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260252AD5223A00365A8D /* AddClientView.swift */; };
 		B302602A2AD522B000365A8D /* AddClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30260292AD522B000365A8D /* AddClientViewModel.swift */; };
 		B316F3342AE395D500FDB934 /* ProgressEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F3332AE395D500FDB934 /* ProgressEntry.swift */; };
+		B3355F1C2AFFE5B70049CAB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3355F1B2AFFE5B70049CAB6 /* GoogleService-Info.plist */; };
+		B3355F1F2AFFE9060049CAB6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B3355F1E2AFFE9060049CAB6 /* FirebaseFirestore */; };
+		B3355F212AFFE9060049CAB6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3355F202AFFE9060049CAB6 /* FirebaseFirestoreSwift */; };
+		B3355F232AFFF4390049CAB6 /* GymClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3355F222AFFF4390049CAB6 /* GymClient.swift */; };
 		B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */; };
 		B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */; };
 		B39A04F82ADCEDC900FE0704 /* AddProgressEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F72ADCEDC900FE0704 /* AddProgressEntryView.swift */; };
-		B3FCBD442AF6C1B400CC480B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3FCBD422AF6C1B400CC480B /* Model.xcdatamodeld */; };
-		B3FCBD462AF6C2F100CC480B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FCBD452AF6C2F100CC480B /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,11 +67,11 @@
 		B30260252AD5223A00365A8D /* AddClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientView.swift; sourceTree = "<group>"; };
 		B30260292AD522B000365A8D /* AddClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewModel.swift; sourceTree = "<group>"; };
 		B316F3332AE395D500FDB934 /* ProgressEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntry.swift; sourceTree = "<group>"; };
+		B3355F1B2AFFE5B70049CAB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3355F222AFFF4390049CAB6 /* GymClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClient.swift; sourceTree = "<group>"; };
 		B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProgressViewModel.swift; sourceTree = "<group>"; };
 		B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProgressView.swift; sourceTree = "<group>"; };
 		B39A04F72ADCEDC900FE0704 /* AddProgressEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProgressEntryView.swift; sourceTree = "<group>"; };
-		B3FCBD432AF6C1B400CC480B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		B3FCBD452AF6C2F100CC480B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3355F1F2AFFE9060049CAB6 /* FirebaseFirestore in Frameworks */,
+				B3355F212AFFE9060049CAB6 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +104,7 @@
 		B3025FE42AD4C4E100365A8D = {
 			isa = PBXGroup;
 			children = (
-				B3FCBD452AF6C2F100CC480B /* Persistence.swift */,
-				B3FCBD422AF6C1B400CC480B /* Model.xcdatamodeld */,
+				B3355F1B2AFFE5B70049CAB6 /* GoogleService-Info.plist */,
 				B3025FEF2AD4C4E100365A8D /* gymtraineriosproject */,
 				B30260002AD4C4E200365A8D /* gymtraineriosprojectTests */,
 				B302600A2AD4C4E200365A8D /* gymtraineriosprojectUITests */,
@@ -173,6 +176,7 @@
 			children = (
 				B30260202AD4F25700365A8D /* Client.swift */,
 				B316F3332AE395D500FDB934 /* ProgressEntry.swift */,
+				B3355F222AFFF4390049CAB6 /* GymClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +210,10 @@
 			dependencies = (
 			);
 			name = gymtraineriosproject;
+			packageProductDependencies = (
+				B3355F1E2AFFE9060049CAB6 /* FirebaseFirestore */,
+				B3355F202AFFE9060049CAB6 /* FirebaseFirestoreSwift */,
+			);
 			productName = gymtraineriosproject;
 			productReference = B3025FED2AD4C4E100365A8D /* gymtraineriosproject.app */;
 			productType = "com.apple.product-type.application";
@@ -278,6 +286,9 @@
 				Base,
 			);
 			mainGroup = B3025FE42AD4C4E100365A8D;
+			packageReferences = (
+				B3355F1D2AFFE9060049CAB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B3025FEE2AD4C4E100365A8D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,6 +307,7 @@
 			files = (
 				B3025FF82AD4C4E100365A8D /* Preview Assets.xcassets in Resources */,
 				B3025FF52AD4C4E100365A8D /* Assets.xcassets in Resources */,
+				B3355F1C2AFFE5B70049CAB6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,13 +335,12 @@
 				B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */,
 				B316F3342AE395D500FDB934 /* ProgressEntry.swift in Sources */,
 				B30260262AD5223A00365A8D /* AddClientView.swift in Sources */,
-				B3FCBD442AF6C1B400CC480B /* Model.xcdatamodeld in Sources */,
 				B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */,
 				B3025FF32AD4C4E100365A8D /* ContentView.swift in Sources */,
 				B302601F2AD4EBCA00365A8D /* SettingsView.swift in Sources */,
 				B302601D2AD4EB7600365A8D /* CurrentClientsView.swift in Sources */,
 				B30260242AD51EB100365A8D /* CurrentClientsViewModel.swift in Sources */,
-				B3FCBD462AF6C2F100CC480B /* Persistence.swift in Sources */,
+				B3355F232AFFF4390049CAB6 /* GymClient.swift in Sources */,
 				B30260212AD4F25700365A8D /* Client.swift in Sources */,
 				B3025FF12AD4C4E100365A8D /* gymtraineriosprojectApp.swift in Sources */,
 				63AFB0D02AEFE83D00B97C52 /* CompletedGoalView.swift in Sources */,
@@ -508,7 +519,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.gymtraineriosproject;
+				PRODUCT_BUNDLE_IDENTIFIER = app.gymtraineriosprojectFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -537,7 +548,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.gymtraineriosproject;
+				PRODUCT_BUNDLE_IDENTIFIER = app.gymtraineriosprojectFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -662,18 +673,29 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		B3FCBD422AF6C1B400CC480B /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B3FCBD432AF6C1B400CC480B /* Model.xcdatamodel */,
-			);
-			currentVersion = B3FCBD432AF6C1B400CC480B /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		B3355F1D2AFFE9060049CAB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.17.0;
+			};
 		};
-/* End XCVersionGroup section */
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3355F1E2AFFE9060049CAB6 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3355F1D2AFFE9060049CAB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		B3355F202AFFE9060049CAB6 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3355F1D2AFFE9060049CAB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3025FE52AD4C4E100365A8D /* Project object */;
 }

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct GymClient : Identifiable {
+    var id: String
+    var name: String
+    var age: String
+    var gender: String
+    var weight: Double
+    var weightGoal: Double
+}

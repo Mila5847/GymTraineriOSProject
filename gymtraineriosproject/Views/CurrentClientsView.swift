@@ -1,8 +1,12 @@
 import SwiftUI
 
 struct CurrentClientsView: View {
-    @ObservedObject var viewModel: CurrentClientsViewModel
+    @ObservedObject var viewModel = CurrentClientsViewModel()
     @State private var isAddingClient = false
+    
+    init(){
+        viewModel.getClients()
+    }
     
     var body: some View {
         NavigationStack {
@@ -13,27 +17,31 @@ struct CurrentClientsView: View {
                 
                 ScrollView {
                     LazyVStack(alignment: .leading) {
-                        ForEach(viewModel.clients, id: \.id) { client in
-                            NavigationLink(destination: ClientProgressView(viewModel: ClientProgressViewModel(client: client), viewModelCurrentClients: viewModel)) {
-                                HStack {
-                                    Text(client.name)
-                                        .font(.system(size: 20, weight: .regular))
-                                        .foregroundColor(.black)
-                                        .padding()
-                                    
-                                    Spacer()
-                                    
-                                    Button(action: {
-                                        // Remove the client from the view model
-                                        viewModel.removeClient(client)
-                                    }) {
-                                        Image(systemName: "xmark.circle.fill")
-                                            .foregroundColor(.red)
+                        ForEach(viewModel.clientsList) { client in
+                            NavigationLink(
+                                destination: ClientProgressView(viewModel: ClientProgressViewModel(client: client)),
+                                isActive: .constant(false),
+                                label: {
+                                    HStack {
+                                        Text(client.name)
+                                            .font(.system(size: 20, weight: .regular))
+                                            .foregroundColor(.black)
+                                            .padding()
+                                        
+                                        Spacer()
+                                        
+                                        Button(action: {
+                                            // Remove the client from the view model and set isActive to false
+                                            viewModel.deleteClient(client)
+                                        }) {
+                                            Image(systemName: "xmark.circle.fill")
+                                                .foregroundColor(.red)
+                                        }
+                                        .padding(.trailing, 20)
+                                        .font(.system(size: 20))
                                     }
-                                    .padding(.trailing, 20)
-                                    .font(.system(size: 20))
                                 }
-                            }
+                            )
                         }
                     }
                 }
@@ -51,14 +59,14 @@ struct CurrentClientsView: View {
                         isAddingClient = true
                     }) {
                         Image(systemName: "plus")
-                    }
-                    .sheet(isPresented: $isAddingClient) {
+                    }.sheet(isPresented: $isAddingClient) {
                         // Present the AddClientView when isAddingClient is true
-                        AddClientView(viewModelAddClient: viewModel.addClientViewModel, viewModelCurrentClient: viewModel)
-                    }
+                        AddClientView(viewModelCurrentClient: viewModel)
+                        }
                 }
             }
         }
     }
 }
+
 

@@ -1,11 +1,9 @@
 import Foundation
 
-struct ProgressEntry {
+struct ProgressEntry : Identifiable {
+    var id: String
     var date: Date
-    var weight: Double?
+    var weight: Double
+    var clientId: String
     
-    init(date:Date, weight: Double){
-        self.date = date
-        self.weight = weight
-    }
 }

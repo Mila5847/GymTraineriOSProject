@@ -11,7 +11,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
 
                 VStack {
-                    NavigationLink(destination: CurrentClientsView(viewModel: currentClientsViewModel)) {
+                    NavigationLink(destination: CurrentClientsView()) {
                         Text("Current Clients")
                             .font(.title)
                             .padding()
