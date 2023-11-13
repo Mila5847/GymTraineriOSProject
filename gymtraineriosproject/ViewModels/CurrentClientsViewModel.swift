@@ -55,6 +55,22 @@ class CurrentClientsViewModel: ObservableObject {
             }
         }
     }
+    
+    func updateWeightAndGoal(client: GymClient) {
+        let db = Firestore.firestore()
+
+        db.collection("clients").document(client.id).updateData([
+            "weight": client.weight,
+            "weightGoal": client.weightGoal
+        ]) { error in
+            if let error = error {
+                print("Error updating weight and weight goal: \(error.localizedDescription)")
+            } else {
+                print("Weight and weight goal updated successfully.")
+                self.getClients()
+            }
+        }
+    }
 
     func deleteClient(_ client: GymClient) {
             let db = Firestore.firestore()

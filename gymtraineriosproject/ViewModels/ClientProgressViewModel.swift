@@ -13,8 +13,11 @@ class ClientProgressViewModel: ObservableObject {
 
     var client: GymClient
 
-    init(client: GymClient) {
+    var currentClientsViewModel: CurrentClientsViewModel
+
+    init(client: GymClient, currentClientsViewModel: CurrentClientsViewModel) {
         self.client = client
+        self.currentClientsViewModel = currentClientsViewModel
         getProgressEntries()
     }
 
@@ -45,29 +48,45 @@ class ClientProgressViewModel: ObservableObject {
     }
     
     func addProgressEntry() {
-            let db = Firestore.firestore()
+        let db = Firestore.firestore()
 
-            // Assuming you have a function to get the client ID from the selected client
-            guard let clientId = getClientId() else {
-                print("Error: Unable to get client ID.")
-                return
-            }
+        // Assuming you have a function to get the client ID from the selected client
+        guard let clientId = getClientId() else {
+            print("Error: Unable to get client ID.")
+            return
+        }
 
-            db.collection("progressEntries").addDocument(data: [
-                "clientId": clientId,
-                "date": date,
-                "weight": weight
-            ]) { [weak self] error in
-                if error == nil {
-                    // Successfully added to Firestore
-                    // Additional logic if needed
-                    self?.getProgressEntries() // Update progress entries after adding
-                } else {
-                    // Handle error
-                    print("Error adding progress entry: \(error?.localizedDescription ?? "Unknown error")")
-                }
+        // Update the client's current weight
+        let newCurrentWeight = weight
+        let updatedClient = GymClient(
+            id: client.id,
+            name: client.name,
+            age: client.age,
+            gender: client.gender,
+            weight: newCurrentWeight,
+            weightGoal: client.weightGoal
+        )
+
+        // Update weight goal and current weight in CurrentClientsViewModel
+        currentClientsViewModel.updateWeightAndGoal(client: updatedClient)
+
+        // Add progress entry to Firestore
+        db.collection("progressEntries").addDocument(data: [
+            "clientId": clientId,
+            "date": date,
+            "weight": weight
+        ]) { [weak self] error in
+            if error == nil {
+                // Successfully added to Firestore
+                // Additional logic if needed
+                self?.getProgressEntries() // Update progress entries after adding
+            } else {
+                // Handle error
+                print("Error adding progress entry: \(error?.localizedDescription ?? "Unknown error")")
             }
         }
+    }
+
     
     func getClientId() -> String? {
             return client.id

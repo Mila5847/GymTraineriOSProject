@@ -19,7 +19,7 @@ struct CurrentClientsView: View {
                     LazyVStack(alignment: .leading) {
                         ForEach(viewModel.clientsList) { client in
                             NavigationLink(
-                                destination: ClientProgressView(viewModel: ClientProgressViewModel(client: client)),
+                                destination: ClientProgressView(viewModel: ClientProgressViewModel(client: client, currentClientsViewModel: viewModel)),
                                 isActive: .constant(false),
                                 label: {
                                     HStack {
