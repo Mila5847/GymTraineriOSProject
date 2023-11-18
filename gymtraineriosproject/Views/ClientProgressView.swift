@@ -20,6 +20,7 @@ struct ClientProgressView: View {
     @State private var newDate = Date()
     @State private var newWeight = 0.0
     @State private var isShowingForm = false
+   
     
     var body: some View {
         NavigationStack {
@@ -28,10 +29,14 @@ struct ClientProgressView: View {
                     .font(.title)
                     .padding()
                 
-                Text("Weight \(viewModel.client.weight)")
-                
+                Text("Current Weight \(String(format: "%.2f", viewModel.client.weight))")
+                Text("Weight Goal \(String(format: "%.2f", viewModel.client.weightGoal))")
+
+                if(viewModel.client.weight == viewModel.client.weightGoal){
+                    CompleteGoalView()
+                }
                 if(viewModel.client.weight - viewModel.client.weightGoal) > 0 {
-                    Text("Goal: Lose \(String(format: "%.2f", viewModel.client.weightGoal - viewModel.client.weight)) kilograms")
+                    Text("Goal: Lose \(String(format: "%.2f", viewModel.client.weight - viewModel.client.weightGoal)) kilograms")
                         .font(.headline)
                         .padding()
                 } else {
