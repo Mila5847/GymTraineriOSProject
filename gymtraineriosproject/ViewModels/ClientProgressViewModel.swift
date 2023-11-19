@@ -20,7 +20,11 @@ class ClientProgressViewModel: ObservableObject {
         self.currentClientsViewModel = currentClientsViewModel
         getProgressEntries()
     }
-
+    
+    var sortedProgressEntries: [ProgressEntry] {
+            return progressEntries.sorted { $0.date > $1.date }
+    }
+    
     func getProgressEntries() {
         let db = Firestore.firestore()
         

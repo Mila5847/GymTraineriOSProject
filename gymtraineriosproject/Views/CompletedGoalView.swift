@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct CompleteGoalView: View {
+    
     var body: some View {
         ZStack {
-            Color.orange
+            Color.mint
                 .ignoresSafeArea()
 
             VStack {

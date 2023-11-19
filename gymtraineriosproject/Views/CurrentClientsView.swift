@@ -3,7 +3,9 @@ import SwiftUI
 struct CurrentClientsView: View {
     @ObservedObject var viewModel = CurrentClientsViewModel()
     @State private var isAddingClient = false
-    
+    @AppStorage("isDarkMode") private var isDark = false
+    @Environment(\.presentationMode) var presentationMode
+
     init(){
         viewModel.getClients()
     }
@@ -13,6 +15,7 @@ struct CurrentClientsView: View {
             VStack {
                 Text("Current Clients")
                     .font(.title)
+                    .foregroundStyle(isDark ? .white : .black)
                 Spacer()
                 
                 ScrollView {
@@ -25,7 +28,7 @@ struct CurrentClientsView: View {
                                     HStack {
                                         Text(client.name)
                                             .font(.system(size: 20, weight: .regular))
-                                            .foregroundColor(.black)
+                                            .foregroundColor(isDark ? .white : .black)
                                             .padding()
                                         
                                         Spacer()
@@ -47,7 +50,21 @@ struct CurrentClientsView: View {
                 }
             }
             .background(Color(#colorLiteral(red: 0.6196078658, green: 0.7450980544, blue: 0.7725490332, alpha: 0.5)))
-            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarBackButtonHidden(true)
+                  .toolbar {
+                      ToolbarItem(placement: .navigationBarLeading) {
+                          HStack {
+                              Image(systemName: "chevron.left.circle")
+                                  .imageScale(.large)
+                                  .foregroundColor(isDark ? .white : .black)
+                                  .onTapGesture {
+                                      presentationMode.wrappedValue.dismiss()
+                                  }
+                              Text("Back")
+                                  .foregroundStyle(isDark ? .white : .black)
+                          }
+                      }
+                  }
             .onAppear {
                 // Reset the flag when the view appears to enable navigation
                 isAddingClient = false
@@ -59,6 +76,7 @@ struct CurrentClientsView: View {
                         isAddingClient = true
                     }) {
                         Image(systemName: "plus")
+                            .foregroundColor(isDark ? .white : .black)
                     }.sheet(isPresented: $isAddingClient) {
                         // Present the AddClientView when isAddingClient is true
                         AddClientView(viewModelCurrentClient: viewModel)
