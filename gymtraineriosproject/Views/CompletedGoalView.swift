@@ -1,11 +1,16 @@
 import SwiftUI
+import ConfettiView
 
 struct CompleteGoalView: View {
     
+    let confettiView = ConfettiView( confetti: [
+        .text("🎉"),
+                .text("💪")
+            ])    
+    
     var body: some View {
         ZStack {
-            Color.mint
-                .ignoresSafeArea()
+            confettiView
 
             VStack {
                 Text("🎉 Congrats! 🎉")
@@ -27,8 +32,6 @@ struct CompleteGoalView: View {
                     .font(.title)
                     .foregroundColor(.white)
                     .padding(.top, 20)
-
-                Spacer()
             }
         }
     }

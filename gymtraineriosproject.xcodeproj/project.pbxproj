@@ -25,6 +25,7 @@
 		B3355F1F2AFFE9060049CAB6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B3355F1E2AFFE9060049CAB6 /* FirebaseFirestore */; };
 		B3355F212AFFE9060049CAB6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B3355F202AFFE9060049CAB6 /* FirebaseFirestoreSwift */; };
 		B3355F232AFFF4390049CAB6 /* GymClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3355F222AFFF4390049CAB6 /* GymClient.swift */; };
+		B3620B932B1450EE0008DD5E /* ConfettiView in Frameworks */ = {isa = PBXBuildFile; productRef = B3620B922B1450EE0008DD5E /* ConfettiView */; };
 		B39A04F42ADCCDF100FE0704 /* ClientProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F32ADCCDF100FE0704 /* ClientProgressViewModel.swift */; };
 		B39A04F62ADCCE5600FE0704 /* ClientProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F52ADCCE5600FE0704 /* ClientProgressView.swift */; };
 		B39A04F82ADCEDC900FE0704 /* AddProgressEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A04F72ADCEDC900FE0704 /* AddProgressEntryView.swift */; };
@@ -81,6 +82,7 @@
 				B3A830FD2B0A4CDC00ADE91D /* SwiftUICharts in Frameworks */,
 				B3355F1F2AFFE9060049CAB6 /* FirebaseFirestore in Frameworks */,
 				B3355F212AFFE9060049CAB6 /* FirebaseFirestoreSwift in Frameworks */,
+				B3620B932B1450EE0008DD5E /* ConfettiView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +215,7 @@
 				B3355F1E2AFFE9060049CAB6 /* FirebaseFirestore */,
 				B3355F202AFFE9060049CAB6 /* FirebaseFirestoreSwift */,
 				B3A830FC2B0A4CDC00ADE91D /* SwiftUICharts */,
+				B3620B922B1450EE0008DD5E /* ConfettiView */,
 			);
 			productName = gymtraineriosproject;
 			productReference = B3025FED2AD4C4E100365A8D /* gymtraineriosproject.app */;
@@ -289,6 +292,7 @@
 			packageReferences = (
 				B3355F1D2AFFE9060049CAB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B3A830FB2B0A4CDC00ADE91D /* XCRemoteSwiftPackageReference "ChartView" */,
+				B3620B912B1450EE0008DD5E /* XCRemoteSwiftPackageReference "ConfettiView" */,
 			);
 			productRefGroup = B3025FEE2AD4C4E100365A8D /* Products */;
 			projectDirPath = "";
@@ -684,6 +688,14 @@
 				minimumVersion = 10.17.0;
 			};
 		};
+		B3620B912B1450EE0008DD5E /* XCRemoteSwiftPackageReference "ConfettiView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ziligy/ConfettiView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		B3A830FB2B0A4CDC00ADE91D /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -704,6 +716,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B3355F1D2AFFE9060049CAB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		B3620B922B1450EE0008DD5E /* ConfettiView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3620B912B1450EE0008DD5E /* XCRemoteSwiftPackageReference "ConfettiView" */;
+			productName = ConfettiView;
 		};
 		B3A830FC2B0A4CDC00ADE91D /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;

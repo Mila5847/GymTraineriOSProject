@@ -36,6 +36,15 @@ class CurrentClientsViewModel: ObservableObject {
         }
     }
     
+    func resetForm() {
+           name = ""
+           gender = "Male"
+           age = ""
+           weight = 0.0
+           weightGoal = 0.0
+           // Reset other properties as needed
+    }
+    
     func addClient(name: String, age: String, gender: String, weight: Double, weightGoal: Double) {
         let db = Firestore.firestore()
 
